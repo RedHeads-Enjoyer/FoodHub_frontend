@@ -16,6 +16,7 @@ const UserPage = () => {
         image: "",
         recipes: []
     })
+    const {id} = useParams()
 
     const [currentUser, setCurrentUser] = useState({})
     const [isLoadingCurrentUser, setIsLoadingCurrentUser] = useState(true)
@@ -28,13 +29,13 @@ const UserPage = () => {
             .catch((error) => {
                 console.log(error.error)
             }).finally(()=> setIsLoadingCurrentUser(false));
-    }, [])
+    }, [id])
 
     const [isLoading, setIsLoading] = useState(true)
 
     const [avatar, setAvatar] = useState("")
     const [recipes, setRecipes] = useState([])
-    const {id} = useParams()
+
 
     useEffect(() => {
         axios
@@ -45,7 +46,7 @@ const UserPage = () => {
             .catch(error => {
                 console.error("Ошибка получения данных:", error.response.data.message);
             });
-    }, [])
+    }, [id])
 
     useEffect(() => {
         if (user.image !== "") {
