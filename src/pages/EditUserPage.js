@@ -3,7 +3,7 @@ import {useState} from "react";
 import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import {dbUrl, translit} from "../config";
-import {getJwtAuthHeader} from "../functions";
+import {fetchImage, getJwtAuthHeader} from "../functions";
 import classes from "./EditUserPage.module.css";
 import image_placeholder from "../images/image_placeholder.svg"
 import InputText from "../components/InputText";
@@ -21,21 +21,13 @@ const UserPage = () => {
     })
 
     const navigate = useNavigate()
-    const [currentUser, setCurrentUser] = useState("")
     const [avatar, setAvatar] = useState("")
     const {id} = useParams()
+    const [isLoading, setIsLoading] = useState(true)
+
 
     useEffect(() => {
-        axios.get(dbUrl + `/user/me`,getJwtAuthHeader())
-            .then(data => {
-                setCurrentUser(data.data)
-            })
-            .catch(error => {
-                console.error("Ошибка получения данных:", error.response.data.message);
-            });
-    }, [])
-
-    useEffect(() => {
+        setIsLoading(true)
         axios
             .get(dbUrl + `/user/${id}`)
             .then(data => {
@@ -47,25 +39,16 @@ const UserPage = () => {
     }, [])
 
     useEffect(() => {
-        if (user.image !== "") {
-            const fetchImage = async () => {
-                try {
-                    const response = await axios.get(dbUrl + '/image/' + user.image, {
-                        responseType: 'blob'
-                    });
-                    const avatar = URL.createObjectURL(response.data);
-                    setAvatar(avatar);
-                } catch (error) {
-                    console.error('Error fetching image:', error);
-                }
-            };
-            fetchImage();
-
-            return () => {
-                URL.revokeObjectURL(avatar);
-            };
+        if (user._id !== 0) {
+            setIsLoading(false)
         }
     }, [user]);
+
+    useEffect(() => {
+        if (isLoading === false) {
+            fetchImage(setAvatar ,user.image)
+        }
+    }, [isLoading])
 
     const handleImageChange = (e) => {
         const file = e.target.files[0]; // Получаем выбранный файл изображения
