@@ -32,6 +32,7 @@ const LoginPage = () => {
             if (response.status === 400) {
                 setErrors(["Неверно введен адрес элктронной почты или пароль"])
             }
+            console.log(getJwtAuthHeader())
             const userResponse = await axios.get(dbUrl + '/user/me', getJwtAuthHeader());
             dispatch(changeStatus(true))
             navigate('/user/' + userResponse.data._id);
