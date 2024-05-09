@@ -165,12 +165,15 @@ const CreateRecipePage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await setErrors([])
-        if (recipe.equipment.length === 0) setErrors([...errors, "Добавьте минимум одно оборудование"])
-        if (recipe.steps.length === 0) setErrors([...errors, "Добавьте минимум один этап"])
-        if (recipe.ingredients.length === 0) setErrors([...errors, "Добавьте минимум один ингредиент"])
-        if (recipe.image.length === 0) setErrors([...errors, "Добавьте изображение рецепту"])
+        const err = []
+        if (recipe.equipment.length === 0) err.push("Добавьте минимум одно оборудование")
+        if (recipe.steps.length === 0) err.push("Добавьте минимум один этап")
+        if (recipe.ingredients.length === 0) err.push("Добавьте минимум один ингредиент")
+        if (recipe.image.length === 0) err.push("Добавьте изображение рецепту")
 
-        if (errors.length !==0)
+        setErrors(err)
+
+        if (err.length !==0)
         try {
             const formData = new FormData();
             formData.append('image', recipe.image); // Используем выбранный файл из состояния recipe
