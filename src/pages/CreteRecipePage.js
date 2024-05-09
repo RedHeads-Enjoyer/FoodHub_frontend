@@ -24,8 +24,8 @@ const CreateRecipePage = () => {
         image: "",
         difficult: 5,
         ingredients: [],
-        kitchenID: "",
-        typeID: "",
+        kitchenID: "6633e62ef8f574377f536ad9",
+        typeID: "663d3c74ef921765d8a77388",
         equipment: [],
         steps: [],
         visibility: true
