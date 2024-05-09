@@ -1,5 +1,6 @@
 module.exports = {
-    dbUrl: "https://foodhub-rc6m.onrender.com",
+    // dbUrl: "https://foodhub-rc6m.onrender.com/api",
+    dbUrl: "http://localhost:5000/api",
     translit: (word) => {
         let answer = '';
         const converter = {
