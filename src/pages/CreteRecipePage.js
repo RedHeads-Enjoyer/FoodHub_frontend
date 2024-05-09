@@ -173,7 +173,7 @@ const CreateRecipePage = () => {
 
         setErrors(err)
 
-        if (err.length !==0)
+        if (err.length !==0) return
         try {
             const formData = new FormData();
             formData.append('image', recipe.image); // Используем выбранный файл из состояния recipe
