@@ -31,10 +31,11 @@ const CreateRecipePage = () => {
         visibility: true
     })
 
+    const [errors, setErrors] = useState([])
+    const [selectedEquipment, setSelectedEquipment] = useState([])
     const [selectedIngredients, setSelectedIngredients] = useState([])
     const [ingredients, setIngredients] = useState([])
     const [equipment, setEquipment] = useState([])
-    const [selectedEquipment, setSelectedEquipment] = useState([])
     const [kitchens, setKitchens] = useState([])
     const [types, setTypes] = useState([])
     const [image, setImage] = useState("")
@@ -163,6 +164,13 @@ const CreateRecipePage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        await setErrors([])
+        if (recipe.equipment.length === 0) setErrors([...errors, "Добавьте минимум одно оборудование"])
+        if (recipe.steps.length === 0) setErrors([...errors, "Добавьте минимум один этап"])
+        if (recipe.ingredients.length === 0) setErrors([...errors, "Добавьте минимум один ингредиент"])
+        if (recipe.image.length === 0) setErrors([...errors, "Добавьте изображение рецепту"])
+
+        if (errors.length !==0)
         try {
             const formData = new FormData();
             formData.append('image', recipe.image); // Используем выбранный файл из состояния recipe
@@ -305,6 +313,9 @@ const CreateRecipePage = () => {
                 <div className={classes.submit__button__wrapper}>
                     <button className={classes.submit__button} type={"submit"}>Создать</button>
                 </div>
+                {errors.map((err, index) => (
+                    <p key={`err${index}`}>{err}</p>
+                ))}
             </form>
         </div>
     )
