@@ -1,16 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {getCookie, setCookie} from "../functions";
 
 
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
-        status:  getCookie("isAuth") === "true" || false,
+        status:  localStorage.getItem("isAuth") === "true" || false,
     },
     reducers: {
         changeStatus: (state, newStatus) => {
             state.status = newStatus.payload;
-            setCookie("isAuth", state.status, 7)
+            localStorage.setItem("isAuth", state.status)
         },
     },
 })

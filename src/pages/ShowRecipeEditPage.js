@@ -139,8 +139,8 @@ const CreateRecipePage = () => {
         e.preventDefault()
         console.log('asd')
         axios.delete(dbUrl + '/recipe/' + id).then(() => {
-        navigate('/user/' + recipe.authorID)
-        }
+                navigate('/user/' + recipe.authorID)
+            }
         ) .catch(error => {
             console.error('Ошибка при удалении рецепта:', error);
         })
@@ -191,71 +191,71 @@ const CreateRecipePage = () => {
 
                 <p className={classes.page__label}>Создание рецепта</p>
                 {isLoading ? <Loading/> :
-                <>
-                    <div className={classes.recipe__info__wrapper}>
-                        <div className={classes.main__info__wrapper}>
-                            <InputText
-                                label={"Название рецепта"}
-                                type={"text"}
-                                placeholder={"Введите название"}
-                                name={"name"}
-                                onChange={handleChangeRecipe}
-                                value={recipe.name}
-                            />
-                            <InputTextArea
-                                label={"Описание рецепта"}
-                                placeholder={"Описание"}
-                                name={"description"}
-                                onChange={handleChangeRecipe}
-                                value={recipe.description}
-                                required
-                            />
-                            <div className={classes.flex__wrapper}>
-                                <Select
-                                    label={"Тип кухни"}
-                                    name={"kitchenID"}
-                                    onChange={handleChangeRecipeKitchen}
-                                    options={kitchens}
-                                    link = '/kitchen'
-                                />
-                                <Select
-                                    label={"Тип блюда"}
-                                    name={"typeID"}
-                                    onChange={handleChangeRecipeType}
-                                    options={types}
-                                    link = '/type'
-                                />
-                            </div>
-                            <div className={classes.flex__wrapper}>
-                                <InputNumber
-                                    max={10}
-                                    min={1}
-                                    label={"Сложность"}
-                                    name={"difficult"}
-                                    value={recipe.difficult}
+                    <>
+                        <div className={classes.recipe__info__wrapper}>
+                            <div className={classes.main__info__wrapper}>
+                                <InputText
+                                    label={"Название рецепта"}
+                                    type={"text"}
+                                    placeholder={"Введите название"}
+                                    name={"name"}
                                     onChange={handleChangeRecipe}
+                                    value={recipe.name}
+                                />
+                                <InputTextArea
+                                    label={"Описание рецепта"}
+                                    placeholder={"Описание"}
+                                    name={"description"}
+                                    onChange={handleChangeRecipe}
+                                    value={recipe.description}
                                     required
                                 />
-                                <Switch
-                                    label={"Доступ"}
-                                    first={"Для всех"}
-                                    second={"Только мне"}
-                                    name={"visibility"}
-                                    onChange={handleChangeRecipe}
-                                    value={recipe.visibility}
+                                <div className={classes.flex__wrapper}>
+                                    <Select
+                                        label={"Тип кухни"}
+                                        name={"kitchenID"}
+                                        onChange={handleChangeRecipeKitchen}
+                                        options={kitchens}
+                                        link = '/kitchen'
+                                    />
+                                    <Select
+                                        label={"Тип блюда"}
+                                        name={"typeID"}
+                                        onChange={handleChangeRecipeType}
+                                        options={types}
+                                        link = '/type'
+                                    />
+                                </div>
+                                <div className={classes.flex__wrapper}>
+                                    <InputNumber
+                                        max={10}
+                                        min={1}
+                                        label={"Сложность"}
+                                        name={"difficult"}
+                                        value={recipe.difficult}
+                                        onChange={handleChangeRecipe}
+                                        required
+                                    />
+                                    <Switch
+                                        label={"Доступ"}
+                                        first={"Для всех"}
+                                        second={"Только мне"}
+                                        name={"visibility"}
+                                        onChange={handleChangeRecipe}
+                                        value={recipe.visibility}
+                                    />
+                                </div>
+                            </div>
+                            <div className={classes.ingredients__wrapper}>
+                                <IngredientsList
+                                    label={"Ингредиенты"}
+                                    addedIngredients={recipe.ingredients}
+                                    allIngredients={ingredients}
+                                    setTarget={handleChangeRecipe}
+                                    setAllIngredients={setIngredients}
+                                    name={"ingredients"}
                                 />
                             </div>
-                        </div>
-                        <div className={classes.ingredients__wrapper}>
-                            <IngredientsList
-                                label={"Ингредиенты"}
-                                addedIngredients={recipe.ingredients}
-                                allIngredients={ingredients}
-                                setTarget={handleChangeRecipe}
-                                setAllIngredients={setIngredients}
-                                name={"ingredients"}
-                            />
-                        </div>
                             <div className={classes.equipment__wrapper}>
                                 <EquipmentList
                                     label={"Оборудование"}
@@ -299,7 +299,7 @@ const CreateRecipePage = () => {
                         <div className={classes.submit__button__wrapper}>
                             <button className={classes.submit__button} onClick={handleDeleteRecipe}>Удалить рецепт</button>
                         </div>
-                </>
+                    </>
 
                 }
 

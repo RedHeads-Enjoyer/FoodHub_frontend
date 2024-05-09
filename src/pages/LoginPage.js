@@ -31,6 +31,7 @@ const LoginPage = () => {
             const response = await axios.post(dbUrl + '/auth/login', data);
             if (response.status === 400) {
                 setErrors(["Неверно введен адрес элктронной почты или пароль"])
+                localStorage.setItem("token", response.data.token)
             }
             console.log(getJwtAuthHeader())
             const userResponse = await axios.get(dbUrl + '/user/me', getJwtAuthHeader());
@@ -53,9 +54,9 @@ const LoginPage = () => {
 
             <form onSubmit={handleSubmit}>
                 <div className={classes.form__wrapper}>
-                <div className={classes.label__wrapper}>
-                    <p className={classes.label__text}>Вход</p>
-                </div>
+                    <div className={classes.label__wrapper}>
+                        <p className={classes.label__text}>Вход</p>
+                    </div>
 
                     <div className={classes.input__text__wrapper}>
                         <InputText
@@ -80,16 +81,16 @@ const LoginPage = () => {
                     <div className={classes.button__wrapper}>
                         <Button name={"Войти"} onClick={handleSubmit}/>
                     </div>
-                <div className={classes.link__wrapper}>
-                    <Link to={'/registration'}><p className={classes.link__text}>У меня нет аккаунта</p></Link>
-                </div>
-                <div>
-                    <ul>
-                        {errors.map((error) => (
-                            <li key={error}>{error}</li>
-                        ))}
-                    </ul>
-                </div>
+                    <div className={classes.link__wrapper}>
+                        <Link to={'/registration'}><p className={classes.link__text}>У меня нет аккаунта</p></Link>
+                    </div>
+                    <div>
+                        <ul>
+                            {errors.map((error) => (
+                                <li key={error}>{error}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </form>
         </div>
