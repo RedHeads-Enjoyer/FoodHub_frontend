@@ -1,0 +1,42 @@
+.login__wrapper {
+    height: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.form__wrapper {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.label__wrapper {
+    text-align: center;
+}
+
+.label__text {
+    font-weight: var(--font-accent-weight);
+}
+
+.link__wrapper {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.link__text {
+    color: var(--color-accent-main);
+    font-size: var(--fonst-semi-size);
+}
+
+.button__wrapper {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.input__text__wrapper {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}

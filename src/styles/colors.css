@@ -1,0 +1,10 @@
+* {
+    --font-main-color: rgb(51, 51, 51);
+    --font-semi-color: rgb(117, 117, 117);
+    --font-placeholder-color: rgb(158, 158, 158);
+    --background-semi-hover-color: rgb(238, 238, 238);
+    --background-semi-color: rgb(244, 244, 244);
+    --color-accent-main: rgb(255, 153, 0);
+    --color-admin: rgb(0, 196, 255);
+
+}

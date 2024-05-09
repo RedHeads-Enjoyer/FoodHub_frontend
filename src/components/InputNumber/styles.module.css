@@ -1,0 +1,50 @@
+.input {
+    border: 0;
+    outline: none;
+    padding: 10px;
+    background-color: var(--background-semi-color);
+    border-radius: var(--border-radius-main);
+    position: relative;
+    user-select: none;
+}
+
+.input__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.increase__button, .decrease__button {
+    border: 0;
+    outline: none;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-color: var(--background-semi-color);
+    cursor: pointer;
+}
+
+.increase__button {
+    top: 20px;
+    right: 5px;
+}
+
+.decrease__button {
+    top: 39px;
+    right: 5px;
+}
+
+.increase__button::before, .increase__button::after, .decrease__button::after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 8px;
+    top: 4px;
+    left: 7px;
+    border-radius: var(--border-radius-main);
+    background-color: var(--font-placeholder-color);
+}
+
+.increase__button::before, .decrease__button::after {
+    transform: rotate(90deg);
+}

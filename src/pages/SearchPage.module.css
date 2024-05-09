@@ -1,0 +1,29 @@
+.search__page__wrapper {
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.filters__wrapper {
+    max-width: 300px;
+    min-width: 280px;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.filters__label {
+    text-align: center;
+    font-weight: var(--font-accent-weight);
+    margin-top: 10px;
+}
+
+.recipes__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    justify-content: space-around;
+    gap: 10px;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    margin-top: 10px;
+}

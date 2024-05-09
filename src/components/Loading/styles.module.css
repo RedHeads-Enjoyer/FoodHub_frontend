@@ -1,0 +1,24 @@
+.loading__wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.loading {
+    position: absolute;
+    background-color: var(--color-accent-main);
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: 3s linear infinite rotate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

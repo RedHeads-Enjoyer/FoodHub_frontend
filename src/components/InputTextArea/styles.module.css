@@ -1,0 +1,15 @@
+.input__class {
+    border: 0;
+    background-color: var(--background-semi-color);
+    border-radius: var(--border-radius-main);
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    height: auto; /* Автоматическая высота */
+}
+
+.input__class::placeholder {
+    color: var(--font-placeholder-color);
+}

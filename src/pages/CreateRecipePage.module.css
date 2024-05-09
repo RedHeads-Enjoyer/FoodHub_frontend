@@ -1,0 +1,79 @@
+.createRecipePage__wrapper {
+    height: calc(100% - 40px);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.page__label {
+    text-align: center;
+    font-weight: var(--font-accent-weight);
+}
+
+.main__info__wrapper {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.flex__wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ingredients__wrapper {
+    max-width: 300px;
+    flex-grow: 1;
+}
+
+.equipment__wrapper {
+    max-width: 200px;
+    flex-grow: 1;
+}
+
+.recipe__info__wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.input__file {
+    display: none;
+}
+
+.image__label img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.image__wrapper {
+    max-width: 200px;
+    flex-grow: 1;
+}
+
+.submit__button {
+    color: white;
+    background-color: var(--color-accent-main);
+    border-radius: var(--border-radius-main);
+    outline: none;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit__button__wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 10px;
+}

@@ -1,0 +1,195 @@
+.equipment__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item__wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background-semi-color);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: var(--border-radius-main);
+    user-select: none;
+    align-content: center;
+    height: 40px;
+}
+
+
+.list__wrapper {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.bottom__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.open__menu__button, .close__menu__button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-accent-main);
+    outline: none;
+    border: 0;
+    border-radius: var(--border-radius-main);
+    cursor: pointer;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.open__menu__button::before, .open__menu__button::after,
+.close__menu__button::before, .close__menu__button::after
+{
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: white;
+    width: 2px;
+    height: 16px;
+    border-radius: var(--border-radius-main);
+    transition: 0.1s;
+}
+
+.open__menu__button::before {
+    top: 12px;
+    left: calc(50% - 1px);
+}
+
+.open__menu__button::after {
+    top: 12px;
+    left: calc(50% - 1px);
+    transform: rotate(90deg);
+}
+
+.close__menu__button::before {
+    top: 12px;
+    left: calc(50% - 1px);
+    transform: rotate(-45deg);
+}
+
+.close__menu__button::after {
+    top: 12px;
+    left: calc(50% - 1px);
+    transform: rotate(45deg);
+}
+
+.calorie__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--background-semi-color);
+    border-radius: var(--border-radius-main);
+    width: 100%;
+}
+
+.menu__wrapper {
+    border-radius: var(--border-radius-main);
+    overflow: hidden;
+}
+
+.add__button {
+    outline: none;
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--background-semi-color);
+}
+
+.add__button:hover {
+    background-color: var(--background-semi-hover-color);
+}
+
+.search__bar {
+    border: 0;
+    outline: none;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    background-color: var(--background-semi-color);
+    border-bottom: 2px solid var(--background-semi-hover-color);
+}
+
+.options__wrapper {
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+.add_option__wrapper {
+    background-color: var(--background-semi-color);
+}
+
+.add_option__wrapper p{
+    text-align: justify;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: var(--fonst-semi-size);
+}
+
+.add__option__button {
+    margin-left: 10px;
+    background-color: var(--color-accent-main);
+    outline: none;
+    border: 0;
+    border-radius: var(--border-radius-main);
+    padding: 0;
+    cursor: pointer;
+}
+
+.add__option__button p {
+    color: white;
+}
+
+.number__input {
+    outline: none;
+    border: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.div__flex {
+    display: flex;
+    gap: 4px;
+    align-content: center;
+    position: relative;
+}
+
+.remove__button {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    outline: none;
+    border: 0;
+    background-color: var(--background-semi-color);
+    cursor: pointer;
+}
+
+.remove__button::before, .remove__button::after {
+    position: absolute;
+    content: '';
+    display: block;
+    background-color: var(--font-placeholder-color);
+    width: 2px;
+    height: 12px;
+}
+
+.remove__button::before {
+    top: 4px;
+    transform: rotate(-45deg);
+}
+
+.remove__button::after {
+    top: 4px;
+    transform: rotate(45deg);
+}
+
+.calorie__text {
+    margin-right: 10px;
+}

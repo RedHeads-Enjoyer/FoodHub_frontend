@@ -1,0 +1,115 @@
+header {
+    height: 40px;
+    background-color: white;
+}
+
+.name {
+    color: var(--color-accent-main);
+    font-size: 1.7em;
+    margin-left: 10px;
+    text-wrap: none;
+}
+
+.user__wrapper {
+    cursor: pointer;
+    margin-right: 10px;
+    width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.user__avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.header__wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user__username {
+    margin-left: 10px;
+    color: var(--color-accent-main);
+    display: block;
+}
+
+.menu__wrapper {
+    position: absolute;
+    max-width: 300px;
+    top: 40px;
+    right: 10px;
+    background-color: var(--color-accent-main);
+    border-radius: var(--border-radius-main);
+}
+
+.list__wrapper {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.menu__item__wrapper{
+    cursor: pointer;
+}
+
+.menu__item__wrapper:hover .menu__item button{
+    color: var(--color-accent-main);
+    background-color: white;
+}
+
+.menu__item button {
+    outline: none;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.logo__wrapper {
+    max-width: 300px;
+}
+
+.search__bar__wrapper {
+    display: flex;
+    max-width: 400px;
+}
+
+.search__bar {
+    outline: none;
+    padding: 10px;
+    border-radius: var(--border-radius-main) 0 0 var(--border-radius-main);
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid var(--color-accent-main);
+}
+
+.search__bar::placeholder {
+    color: var(--font-placeholder-color);
+}
+
+.search__button {
+    outline: none;
+    border: 0;
+    background-color: var(--color-accent-main);
+    border-radius: 0 var(--border-radius-main) var(--border-radius-main) 0;
+    cursor: pointer;
+}
+
+
+@media (max-width: 500px) {
+    .user__username {
+        display: none;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+}

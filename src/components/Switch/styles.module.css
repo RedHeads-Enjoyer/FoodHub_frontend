@@ -1,0 +1,16 @@
+.switch__wrapper {
+    width: fit-content;
+}
+
+.switch {
+    background-color: var(--background-semi-color);
+    width: fit-content;
+    user-select: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-main);
+}
+
+.switch p {
+    padding: 10px;
+    box-sizing: border-box;
+}

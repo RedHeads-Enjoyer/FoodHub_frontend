@@ -1,0 +1,92 @@
+.steps__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.step__wrapper {
+    flex-shrink: 0;
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+.div__flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.index__wrapper  {
+    width: 24px;
+    height: 24px;
+    background-color: rgb(217, 217, 217);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 100%;
+}
+
+.index__wrapper p {
+    color: white;
+}
+
+.add__step__button {
+    flex-shrink: 0;
+    flex-grow: 0;
+    outline: none;
+    cursor: pointer;
+    max-width: 400px;
+    min-width: 280px;
+    border: var(--color-accent-main) 2px solid;
+    border-radius: var(--border-radius-main);
+    background-color: transparent;
+    min-height: 40px;
+}
+
+.add__step__button p {
+    color: var(--color-accent-main);
+    font-size: 20px;
+}
+
+.delete__button {
+    margin-left: auto;
+    outline: none;
+    border: 0;
+    background-color: var(--background-semi-color);
+    border-radius: var(--border-radius-main);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.delete__button::after, .delete__button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    border-radius: var(--border-radius-main);
+    background-color: var(--font-placeholder-color);
+}
+
+.delete__button::after {
+    top: 4px;
+    left: 9px;
+    transform: rotate(45deg);
+}
+
+.delete__button::before {
+    top: 4px;
+    left: 9px;
+    transform: rotate(-45deg);
+}
+
+.step__description {
+    white-space: pre-wrap;
+}

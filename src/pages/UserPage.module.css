@@ -1,0 +1,55 @@
+.profile__wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.user__info__wrapper {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.avatar__wrapper {
+    width: 200px;
+    height: 200px;
+}
+
+.avatar__wrapper img{
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.page__label {
+    font-weight: var(--font-accent-weight);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.recipes__label {
+    margin-top: 10px;
+    font-weight: var(--font-accent-weight);
+}
+
+.recipes__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-grow: 1;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.admin__button {
+    outline: none;
+    border: 0;
+    background-color: var(--color-accent-main);
+    color: white;
+}

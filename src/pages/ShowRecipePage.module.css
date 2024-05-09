@@ -1,0 +1,142 @@
+.recipe__wrapper {
+    padding: 10px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recipe__name {
+    text-align: center;
+    font-weight: var(--font-accent-weight);
+    margin-top: 10px;
+}
+
+.recipe__avatar {
+    border-radius: var(--border-radius-big);
+    /*box-shadow: 10px 10px 10px pink;*/
+    max-width: 310px;
+    height: auto;
+    min-width: 280px;
+    object-fit: cover;
+}
+
+.grid__wrapper {
+    max-width: 360px;
+    min-width: 280px;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.recipe__stats__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 54px);
+    gap: 10px;
+    grid-template-areas:
+    "vie vot"
+    "dur dif"
+    "typ kit"
+    "cal cal"
+    "use use";
+    align-items: start;
+}
+
+.recipe__info__wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.box1 {
+    grid-area: vie;
+}
+
+.box2 {
+    grid-area: dur;
+}
+
+.box3 {
+    grid-area: dif;
+}
+
+.box4 {
+    grid-area: cal;
+}
+
+.box5 {
+    grid-area: kit;
+}
+
+.box6 {
+    grid-area: typ;
+}
+
+.box7 {
+    grid-area: vot;
+}
+
+.box8 {
+    grid-area: use;
+}
+
+.ingredients__wrapper {
+    background-color: var(--background-semi-color);
+    height: fit-content;
+    padding: 10px;
+    border-radius: var(--border-radius-big);
+}
+
+.equipment__wrapper {
+    background-color: var(--background-semi-color);
+    height: fit-content;
+    padding: 10px;
+    border-radius: var(--border-radius-big);
+}
+
+.list__label {
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: var(--font-accent-weight);
+}
+
+.list__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lists__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 280px;
+}
+
+.rate__buttons__wrapper button{
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.rate__label {
+    font-weight: var(--font-accent-weight);
+}
+
+.rate__wrapper {
+    margin-top: 10px;
+}
+
+.admin__button {
+    border: 0;
+    outline: none;
+    background-color: var(--color-accent-main);
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}

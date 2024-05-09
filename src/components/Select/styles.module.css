@@ -1,0 +1,125 @@
+.select__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 190px;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+
+}
+
+.selector__button {
+    padding: 10px;
+    background-color: var(--background-semi-color);
+    border-radius: var(--border-radius-main);
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+}
+
+.selector__button:hover {
+    background-color: var(--background-semi-hover-color);
+}
+
+.selected__option {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.button__arrow {
+    width: 20px;
+    position: relative;
+}
+
+.arrow__left__down, .arrow__left__up, .arrow__right__down, .arrow__right__up {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: var(--font-placeholder-color);
+    border-radius: var(--border-radius-main);
+    transition: 0.1s;
+}
+
+.arrow__left__down {
+    top: 6px;
+    left: 6px;
+    transform: rotate(-45deg);
+}
+
+.arrow__left__up {
+    top: 6px;
+    left: 6px;
+    transform: rotate(45deg);
+}
+
+.arrow__right__down {
+    top: 6px;
+    right: 6px;
+    transform: rotate(45deg);
+}
+
+.arrow__right__up {
+    top: 6px;
+    right: 6px;
+    transform: rotate(-45deg);
+}
+
+.options__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    border-radius: 0 0 var(--border-radius-main) var(--border-radius-main);
+    background-color: var(--background-semi-color);
+    overflow-y: scroll;
+    z-index: 5;
+}
+
+.option__button {
+    outline: none;
+    border: 0;
+    background-color: var(--background-semi-color);
+    cursor: pointer;
+}
+
+.option__button:hover {
+    background-color: var(--background-semi-hover-color);
+}
+
+.search__bar {
+    outline: none;
+    border: 0;
+    background-color: var(--background-semi-color);
+    border-bottom: 2px solid var(--background-semi-hover-color);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: var(--border-radius-main) var(--border-radius-main) 0 0;
+}
+
+.search__options__wrapper {
+    position: relative;
+}
+
+.add_option__wrapper p{
+    text-align: justify;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: var(--fonst-semi-size);
+}
+
+.add__option__button {
+    background-color: var(--color-accent-main);
+    outline: none;
+    border: 0;
+    border-radius: var(--border-radius-main);
+    padding: 0;
+    cursor: pointer;
+}
+
+.add__option__button p {
+    color: white;
+}
+
