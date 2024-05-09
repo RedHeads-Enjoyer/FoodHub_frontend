@@ -1,5 +1,5 @@
 module.exports = {
-    dbUrl: "http://localhost:5000/api",
+    dbUrl: "https://foodhub-back.netlify.app/api",
     translit: (word) => {
         let answer = '';
         const converter = {
