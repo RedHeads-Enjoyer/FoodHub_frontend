@@ -173,37 +173,38 @@ const CreateRecipePage = () => {
 
         setErrors(err)
 
-        if (err.length !==0) return
-        try {
-            const formData = new FormData();
-            formData.append('image', recipe.image); // Используем выбранный файл из состояния recipe
-            formData.append('name', recipe.name);
-            formData.append('description', recipe.description);
-            formData.append('difficult', recipe.difficult);
-            formData.append('kitchenID', recipe.kitchenID);
-            formData.append('typeID', recipe.typeID);
-            formData.append('equipment', JSON.stringify(recipe.equipment));
-            formData.append('ingredients', JSON.stringify(recipe.ingredients));
-            formData.append('steps', JSON.stringify(recipe.steps));
-            formData.append('visibility', recipe.visibility);
-            formData.append('authorID', recipe.authorID);
+        if (err.length ===0) {
+            try {
+                const formData = new FormData();
+                formData.append('image', recipe.image); // Используем выбранный файл из состояния recipe
+                formData.append('name', recipe.name);
+                formData.append('description', recipe.description);
+                formData.append('difficult', recipe.difficult);
+                formData.append('kitchenID', recipe.kitchenID);
+                formData.append('typeID', recipe.typeID);
+                formData.append('equipment', JSON.stringify(recipe.equipment));
+                formData.append('ingredients', JSON.stringify(recipe.ingredients));
+                formData.append('steps', JSON.stringify(recipe.steps));
+                formData.append('visibility', recipe.visibility);
+                formData.append('authorID', recipe.authorID);
 
 
-            const url = dbUrl + '/recipe';
-            const response = await axios.post(url, formData, getJwtAuthFilesHeader()).then(() => {
-                navigate('/user/' + currentUser._id)
-            })
-            console.log(response);
-        } catch (error) {
-            if (error.response) {
-                // Здесь обрабатываем ошибку на уровне ответа от сервера
-                console.log(error.response.data.message);
-            } else if (error.request) {
-                // Здесь обрабатываем ошибку на уровне запроса
-                console.log('Ошибка запроса:', error.request);
-            } else {
-                // Здесь обрабатываем другие типы ошибок
-                console.log('Ошибка:', error.message);
+                const url = dbUrl + '/recipe';
+                const response = await axios.post(url, formData, getJwtAuthFilesHeader()).then(() => {
+                    navigate('/user/' + currentUser._id)
+                })
+                console.log(response);
+            } catch (error) {
+                if (error.response) {
+                    // Здесь обрабатываем ошибку на уровне ответа от сервера
+                    console.log(error.response.data.message);
+                } else if (error.request) {
+                    // Здесь обрабатываем ошибку на уровне запроса
+                    console.log('Ошибка запроса:', error.request);
+                } else {
+                    // Здесь обрабатываем другие типы ошибок
+                    console.log('Ошибка:', error.message);
+                }
             }
         }
     }
