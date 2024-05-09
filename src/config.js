@@ -1,5 +1,5 @@
 module.exports = {
-    dbUrl: "https://foodhub-back.netlify.app/api",
+    dbUrl: "https://foodhub-rc6m.onrender.com",
     translit: (word) => {
         let answer = '';
         const converter = {
